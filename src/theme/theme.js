@@ -1,72 +1,158 @@
 import { createTheme } from '@mui/material/styles';
 
-// Paleta: verde botica (estable, "tienda de confianza") + ámbar como acento de acción.
-// Tipografía: Space Grotesk para títulos (carácter, geométrica), Inter para texto/datos.
 const theme = createTheme({
   palette: {
     mode: 'light',
+
     primary: {
-      main: '#1F4B43', // verde botica oscuro
-      light: '#3C6F64',
-      dark: '#143229',
-      contrastText: '#FBF7EF',
+      main: '#E91E63',      // Rosa principal
+      light: '#F48FB1',
+      dark: '#C2185B',
+      contrastText: '#FFFFFF',
     },
+
     secondary: {
-      main: '#E1A33C', // ámbar, color de acción/alertas suaves
-      contrastText: '#1F1B12',
+      main: '#F8BBD0',      // Rosa pastel
+      light: '#FCE4EC',
+      dark: '#EC407A',
+      contrastText: '#880E4F',
     },
+
     background: {
-      default: '#F6F3EC', // papel cálido, no blanco puro
+      default: '#FFF5F8',   // Fondo rosado muy claro
       paper: '#FFFFFF',
     },
+
     text: {
-      primary: '#1C231F',
-      secondary: '#5B655F',
+      primary: '#4A2C3A',
+      secondary: '#8A6A78',
     },
-    divider: '#E3DDCC',
-    error: { main: '#B23A2E' },
-    success: { main: '#2E7D5B' },
+
+    divider: '#F3D6E0',
+
+    success: {
+      main: '#66BB6A',
+    },
+
+    error: {
+      main: '#EF5350',
+    },
+
+    warning: {
+      main: '#FFA726',
+    },
+
+    info: {
+      main: '#42A5F5',
+    },
   },
+
   shape: {
-    borderRadius: 10,
+    borderRadius: 14,
   },
+
   typography: {
-    fontFamily: '"Inter", system-ui, -apple-system, sans-serif',
-    h1: { fontFamily: '"Space Grotesk", sans-serif', fontWeight: 700 },
-    h2: { fontFamily: '"Space Grotesk", sans-serif', fontWeight: 700 },
-    h3: { fontFamily: '"Space Grotesk", sans-serif', fontWeight: 600 },
-    h4: { fontFamily: '"Space Grotesk", sans-serif', fontWeight: 600 },
-    h5: { fontFamily: '"Space Grotesk", sans-serif', fontWeight: 600 },
-    h6: { fontFamily: '"Space Grotesk", sans-serif', fontWeight: 600, letterSpacing: 0.2 },
-    button: { textTransform: 'none', fontWeight: 600 },
+    fontFamily: '"Poppins", "Inter", sans-serif',
+
+    h1: {
+      fontWeight: 700,
+    },
+    h2: {
+      fontWeight: 700,
+    },
+    h3: {
+      fontWeight: 700,
+    },
+    h4: {
+      fontWeight: 600,
+    },
+    h5: {
+      fontWeight: 600,
+    },
+    h6: {
+      fontWeight: 600,
+    },
+
+    button: {
+      textTransform: 'none',
+      fontWeight: 600,
+    },
   },
+
   components: {
     MuiPaper: {
       styleOverrides: {
-        root: { backgroundImage: 'none' },
-      },
-    },
-    MuiAppBar: {
-      styleOverrides: {
         root: {
-          backgroundColor: '#1F4B43',
+          backgroundImage: 'none',
+          borderRadius: 16,
+          boxShadow: '0 4px 20px rgba(233,30,99,0.08)',
         },
       },
     },
-    MuiButton: {
+
+    MuiAppBar: {
       styleOverrides: {
-        root: { borderRadius: 8 },
+        root: {
+          backgroundColor: '#E91E63',
+          boxShadow: '0 4px 12px rgba(233,30,99,.2)',
+        },
       },
     },
+
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 10,
+          paddingLeft: 18,
+          paddingRight: 18,
+          fontWeight: 600,
+        },
+
+        containedPrimary: {
+          background: 'linear-gradient(135deg,#EC407A,#E91E63)',
+
+          '&:hover': {
+            background: 'linear-gradient(135deg,#E91E63,#D81B60)',
+          },
+        },
+      },
+    },
+
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: 12,
+          },
+        },
+      },
+    },
+
     MuiTableHead: {
       styleOverrides: {
         root: {
           '& .MuiTableCell-root': {
+            backgroundColor: '#FCE4EC',
+            color: '#880E4F',
             fontWeight: 700,
-            fontFamily: '"Space Grotesk", sans-serif',
-            backgroundColor: '#EFE9D8',
-            color: '#1C231F',
           },
+        },
+      },
+    },
+
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          fontWeight: 600,
+        },
+      },
+    },
+
+    MuiSnackbarContent: {
+      styleOverrides: {
+        root: {
+          borderRadius: 10,
         },
       },
     },
